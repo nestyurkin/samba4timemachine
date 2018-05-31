@@ -12,12 +12,21 @@ user() { local name="$1" passwd="$2" id="${3:-""}" group="${4:-""}"
 [[ "${USERID:-""}" =~ ^[0-9]+$ ]] && usermod -u $USERID -o smbuser
 [[ "${GROUPID:-""}" =~ ^[0-9]+$ ]] && groupmod -g $GROUPID -o users
 
-while getopts ":u" opt; do
+while getopts ":u:" opt; do
     case "$opt" in
         u) eval user $(sed 's/^/"/; s/$/"/; s/;/" "/g' <<< $OPTARG) ;;
     esac
 done
 shift $(( OPTIND - 1 ))
 
-ionice -c 3 nmbd -D
-ionice -c 3 smbd -FS --no-process-group </dev/null
+if [[ $# -ge 1 && -x $(which $1 2>&-) ]]; then
+    exec "$@"
+elif [[ $# -ge 1 ]]; then
+    echo "ERROR: command not found: $1"
+    exit 13
+elif ps -ef | egrep -v grep | grep -q smbd; then
+    echo "Service already running, please restart container to apply changes"
+else
+    ionice -c 3 nmbd -D
+    ionice -c 3 smbd -FS --no-process-group </dev/null
+fi
