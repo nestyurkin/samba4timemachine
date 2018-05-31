@@ -30,6 +30,6 @@ elif [[ $# -ge 1 ]]; then
 elif ps -ef | egrep -v grep | grep -q smbd; then
     echo "Service already running, please restart container to apply changes"
 else
-    ionice -c 3 nmbd -D
+    [[ ${NMBD:-""} ]] && ionice -c 3 nmbd -D
     ionice -c 3 smbd -FS --no-process-group </dev/null
 fi

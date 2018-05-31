@@ -45,6 +45,7 @@ OSX High Sierra needs Samba server >= 4.8.0
           TZ: Europe/Moscow
           USERID: 922
           GROUPID: 922
+          #NMBD=true
         command:
           - -u "nikn;pass1"
           - -u "anna;pass2"
