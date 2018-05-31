@@ -4,4 +4,4 @@
 [[ "${GROUPID:-""}" =~ ^[0-9]+$ ]] && groupmod -g $GROUPID -o users
 
 ionice -c 3 nmbd -D
-exec ionice -c 3 smbd -FS </dev/null
+ionice -c 3 smbd -FS 
