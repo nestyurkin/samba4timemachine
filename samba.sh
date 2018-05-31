@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # truncated code from dperson samba.sh
+set -o nounset                              # Treat unset variables as an error
 
 user() { local name="$1" passwd="$2" id="${3:-""}" group="${4:-""}"
     [[ "$group" ]] && { grep -q "^$group:" /etc/group || addgroup "$group"; }
@@ -15,6 +16,8 @@ user() { local name="$1" passwd="$2" id="${3:-""}" group="${4:-""}"
 while getopts ":u:" opt; do
     case "$opt" in
         u) eval user $(sed 's/^/"/; s/$/"/; s/;/" "/g' <<< $OPTARG) ;;
+        "?") echo "Unknown option: -$OPTARG" ;;
+        ":") echo "No argument value for option: -$OPTARG" ;;
     esac
 done
 shift $(( OPTIND - 1 ))
