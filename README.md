@@ -1,6 +1,10 @@
 # samba4timemachine
 Latest Samba Server for support OSX High Sierra 
 
+![Docker Automated build](https://img.shields.io/docker/automated/nestyurkin/samba4timemachine.svg)
+![Docker Build Status](https://img.shields.io/docker/build/nestyurkin/samba4timemachine.svg)
+[![](https://images.microbadger.com/badges/image/nestyurkin/samba4timemachine.svg)](https://microbadger.com/images/nestyurkin/samba4timemachine "Get your own image badge on microbadger.com")
+[![](https://images.microbadger.com/badges/version/nestyurkin/samba4timemachine.svg)](https://microbadger.com/images/nestyurkin/samba4timemachine "Get your own version badge on microbadger.com")
 
 Based on Alpine Edge
 OSX High Sierra needs Samba server >= 4.8.0 
