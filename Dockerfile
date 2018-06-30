@@ -1,5 +1,8 @@
 FROM alpine:edge
 
+ARG BUILD_DATE
+LABEL org.label-schema.build-date=$BUILD_DATE org.label-schema.schema-version="1.0"
+
 RUN apk --no-cache --no-progress upgrade && \
     apk --no-cache --no-progress add bash samba shadow tini && \
     adduser -D -G users -H -S -g 'Samba User' -h /tmp smbuser \
