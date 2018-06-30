@@ -1,7 +1,9 @@
 sudo: required
 language: generic
+
 services:
   - docker
+
 env:
   global:
     - secure: kJj3FTlAn9Alu/ODl0F87JE2miPa0nYZhtKYLWyND1dgrzAL9EyJBqe6Y8GdgN+QB6Q+C3wAe5BuHHOy7VKb6SW4TwMq/EGvBrxSIrw/a1YlvsUJuOeTMSs8HlwfhJhTnq8ncH3wnO1i/CBmNKEYC8gtqCPSHUzgZe6wDo/dRflRWPwVWIp7ggsYtdbWcKa7n/7ok8qvYNv4+in4WUvBL1mWxQSPXUGkox9wb/fcngGnTwoGVDcF099B1Z/oU+Lu7b3vERGDEGkp8j2j/cZHclBagNcfJhz6QsT/nyLuANHPo0DPzYxQbGbqCm1Yqmiinw0BA5GCIWsvqygSL9yi4iCbVgjPYzjDARM3/BjFYHq/lI0vZzlX8BCnLBYQ0vS/Davrn8B1MUkhtxuLRIj1a/dDRfCSIfTucMr6mxAeePEz/R2Cnx8IgyiFEckqYbZiwxp8xiH0Cbwm0/m8k0MccxoMOeNaxs79b6JGSwIcx/IOZ+/ldL4UklifqL/cWb4T3/JYF7NGvXEWXYFEBib4h9cC7sSVLopOykJMn8NKUHAFOPhjYGl/w9Rt4q9JQPPfPJO69aAY1UJfqcVJB8sj9YD6KenSClTPSkaDJ66fTdk8Km1RM/vvZAJ6spjnHV1HgPo8YtClKZ1hw2Rxkmo2f6mJ1lBU/FHIJmqCv3Ebf8k=
